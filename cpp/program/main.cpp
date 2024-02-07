@@ -67,20 +67,25 @@ void update(vector<AnggotaDPR>& daftarAnggota) {
 
 void hapus(vector<AnggotaDPR>& daftarAnggota) {
     int id;
-    cout << "ID: ";
+    cout << "Masukkan ID anggota DPR yang akan dihapus: ";
     cin >> id;
 
-    auto it = remove_if(daftarAnggota.begin(), daftarAnggota.end(), [id](const AnggotaDPR& anggota) { 
-        return anggota.get_id() == id; 
-    });
+    bool ditemukan = false;
+    auto it = daftarAnggota.begin();
+    while (it != daftarAnggota.end() && !ditemukan) {
+        if (it->get_id() == id) {
+            daftarAnggota.erase(it);
+            ditemukan = true;
+            cout << "Alert :: Anggota DPR dengan ID " << id << " telah dihapus.\n";
+        }
+        ++it;
+    }
 
-    if (it != daftarAnggota.end()) {
-        daftarAnggota.erase(it, daftarAnggota.end());
-        cout << "Alert :: Anggota DPR dengan ID " << id << " telah dihapus.\n";
-    } else {
+    if (!ditemukan) {
         cout << "Alert :: Anggota DPR dengan ID " << id << " tidak ditemukan.\n";
     }
 }
+
 
 
 int main() {

@@ -27,7 +27,7 @@ def tambah(daftar_anggota):
 
     anggota_baru = AnggotaDPR(id, nama, umur, jabatan, nama_bidang, nama_partai)
     daftar_anggota.append(anggota_baru)
-    print("Anggota DPR berhasil ditambahkan.\n")
+    print("Alert :: Anggota DPR berhasil ditambahkan.\n")
 
 def update(daftar_anggota):
     id = int(input("ID: "))
@@ -44,18 +44,18 @@ def update(daftar_anggota):
             anggota.set_jabatan(jabatan)
             anggota.set_namaBidang(nama_bidang)
             anggota.set_namaPartai(nama_partai)
-            print("Data Anggota DPR berhasil diupdate.\n")
+            print("Alert :: Data Anggota DPR berhasil diupdate.\n")
             return
-    print(f"Anggota DPR dengan ID {id} tidak ditemukan.\n")
+    print(f"Alert :: Anggota DPR dengan ID {id} tidak ditemukan.\n")
 
 def hapus(daftar_anggota):
     id = int(input("Masukkan ID anggota DPR yang akan dihapus: "))
     for i, anggota in enumerate(daftar_anggota):
         if anggota.get_id() == id:
             del daftar_anggota[i]
-            print(f"Anggota DPR dengan ID {id} telah dihapus.\n")
+            print(f"Alert :: Anggota DPR dengan ID {id} telah dihapus.\n")
             return
-    print(f"Anggota DPR dengan ID {id} tidak ditemukan.\n")
+    print(f"Alert :: Anggota DPR dengan ID {id} tidak ditemukan.\n")
 
 def main():
     daftar_anggota = []
@@ -82,10 +82,10 @@ def main():
         elif pilihan == 3:
             hapus(daftar_anggota)
         elif pilihan == 4:
-            print("Selesai.")
+            print("Alert :: Selesai.")
             break
         else:
-            print("Pilihan tidak sesuai.")
+            print("Alert :: Pilihan tidak sesuai.")
 
 if __name__ == "__main__":
     main()

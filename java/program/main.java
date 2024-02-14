@@ -3,8 +3,32 @@ import java.util.Scanner;
 
 public class main {
     public static void displayAnggotaDPR(ArrayList<AnggotaDPR> daftarAnggota) {
+        int maxIdLength = "ID".length();
+        int maxNamaLength = "Nama".length();
+        int maxUmurLength = "Umur".length();
+        int maxJabatanLength = "Jabatan".length();
+        int maxBidangLength = "Bidang".length();
+        int maxPartaiLength = "Partai".length();
+
         for (AnggotaDPR anggota : daftarAnggota) {
-            anggota.showIdentitas();
+            maxIdLength = Math.max(maxIdLength, Integer.toString(anggota.getId()).length());
+            maxNamaLength = Math.max(maxNamaLength, anggota.getNama().length());
+            maxUmurLength = Math.max(maxUmurLength, Integer.toString(anggota.getUmur()).length());
+            maxJabatanLength = Math.max(maxJabatanLength, anggota.getJabatan().length());
+            maxBidangLength = Math.max(maxBidangLength, anggota.getNamaBidang().length());
+            maxPartaiLength = Math.max(maxPartaiLength, anggota.getNamaPartai().length());
+        }
+
+        System.out.printf("%-" + maxIdLength + "s %-"
+                + maxNamaLength + "s %-"
+                + maxUmurLength + "s %-"
+                + maxJabatanLength + "s %-"
+                + maxBidangLength + "s %-"
+                + maxPartaiLength + "s %n",
+                "ID", "Nama", "Umur", "Jabatan", "Bidang", "Partai");
+
+        for (AnggotaDPR anggota : daftarAnggota) {
+            anggota.showIdentitas(maxIdLength, maxNamaLength, maxUmurLength, maxJabatanLength, maxBidangLength, maxPartaiLength);
         }
     }
 
@@ -26,7 +50,7 @@ public class main {
 
         AnggotaDPR anggotaBaru = new AnggotaDPR(id, nama, umur, jabatan, namaBidang, namaPartai);
         daftarAnggota.add(anggotaBaru);
-        System.out.println("Anggota DPR berhasil ditambahkan.\n");
+        System.out.println("Alert :: Anggota DPR berhasil ditambahkan.\n");
     }
 
     public static void update(ArrayList<AnggotaDPR> daftarAnggota, Scanner sc) {
@@ -46,7 +70,7 @@ public class main {
                 anggota.setNamaBidang(sc.nextLine());
                 System.out.print("Nama Partai: ");
                 anggota.setNamaPartai(sc.nextLine());
-                System.out.println("Data Anggota DPR berhasil diupdate.\n");
+                System.out.println("Alert :: Data Anggota DPR berhasil diupdate.\n");
                 return;
             }
         }
@@ -63,7 +87,7 @@ public class main {
             if (daftarAnggota.get(i).getId() == id) {
                 daftarAnggota.remove(i);
                 ditemukan = true;
-                System.out.println("Anggota DPR dengan ID " + id + " telah dihapus.\n");
+                System.out.println("Alert :: Anggota DPR dengan ID " + id + " telah dihapus.\n");
             }
             i++;
         }
@@ -80,8 +104,14 @@ public class main {
         int pilihan;
 
         do {
-            System.out.println("===================");
-            displayAnggotaDPR(daftarAnggota);
+            System.out.println("==================================");
+            System.out.println("Tabel Anggota DPR :");
+            if(daftarAnggota.size() == 0) {
+                System.out.println("Data anggota DPR belum tersedia, Silakan input terlebih dahulu!");
+            } else {
+                displayAnggotaDPR(daftarAnggota);
+            }
+            System.out.println("==================================");
 
             System.out.println("1. Tambah Anggota DPR");
             System.out.println("2. Update Anggota DPR");
@@ -103,10 +133,10 @@ public class main {
                     hapus(daftarAnggota, sc);
                     break;
                 case 4:
-                    System.out.println("Selesai.");
+                    System.out.println("Alert :: Selesai.");
                     break;
                 default:
-                    System.out.println("Pilihan tidak sesuai.");
+                    System.out.println("Alert :: Pilihan tidak sesuai.");
             }
         } while (pilihan != 4);
 

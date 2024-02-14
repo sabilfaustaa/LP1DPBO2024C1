@@ -75,9 +75,13 @@ public class AnggotaDPR {
         this.namaPartai = namaPartai;
     }
 
-    public void showIdentitas() {
-        System.out.println("ID: " + id + ", Nama: " + nama + ", Umur: " + umur
-                + ", Jabatan: " + jabatan + ", Bidang: " + namaBidang
-                + ", Partai: " + namaPartai);
+    public void showIdentitas(int idWidth, int namaWidth, int umurWidth, int jabatanWidth, int bidangWidth, int partaiWidth) {
+        System.out.printf("%-" + idWidth + "d %-"
+            + namaWidth + "s %-"
+            + umurWidth + "d %-"
+            + jabatanWidth + "s %-"
+            + bidangWidth + "s %-"
+            + partaiWidth + "s %n",
+            id, nama, umur, jabatan, namaBidang, namaPartai);
     }
 }

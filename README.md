@@ -1,12 +1,16 @@
 # LP1DPBO2024C1
-Buatlah program berbasis OOP menggunakan bahasa pemrograman C++, Java, Python, dan PHP yang menampilkan informasi daftar anggota DPR (sekumpulan objek anggota DPR) dan memiliki fitur menambah, mengubah, dan menghapus data. Setiap anggota DPR memiliki data id, nama, nama bidang, nama partai, dan foto profil (khusus bahasa PHP). 
 
-Note : 
-- Boleh menambahkan properti/atribut baru
-- Tampilkan data selengkap-lengkapnya dalam bentuk list/tabel
-- Program dikumpulkan pada repository GitHub yang dibuat public dengan nama “LP1DPBO2024C…” 
-- Hanya program pada branch Main yang akan dinilai dan diperiksa 
-- Jika waktu pengumpulan sudah habis dan ingin mengupdate kode program, update pada branch lain karena mengupdate branch Main setelah waktu pengumpulan terlewat maka program tidak akan dinilai 
-- Struktur folder - CPP - program - screenshot + Java + Python + PHP README.md 
-- File README berisi desain program, penjelasan alur, dan dokumentasi saat program dijalankan (screenshot/screen record, pilih salah satu bahasa sebagai contoh) 
+Saya Muhamad Sabil Fausta NIM 2210142 mengerjakan Latihan 1 dalam mata kuliah Desain dan Pemrograman Berorientasi Objek
+untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
 
+# Desain Program
+
+Program yang saya buat menggunakan konsep OOP (Object Oriented Programming) yang mana terdapat 1 class yaitu sebgai representasi dari Anggota DPR
+terdapat beberapa atribut yang dimasukan sesuai dengan spesifikasi dan juga yang saya tambahkan :
+
+id: Atribut ini merupakan pengidentifikasi unik untuk setiap anggota DPR. id digunakan untuk membedakan antara satu anggota dengan anggota lainnya.
+nama: Atribut ini menyimpan nama dari anggota DPR tersebut.
+umur: Atribut ini merepresentasikan umur anggota DPR dalam tahun.
+jabatan: Atribut ini menyimpan informasi tentang jabatan yang dipegang oleh anggota DPR tersebut dalam lembaga. Jabatan bisa berupa "Ketua", "Wakil Ketua", "Sekretaris", atau jabatan lainnya sesuai dengan struktur organisasi DPR.
+namaBidang: Atribut ini menunjukkan bidang atau komisi yang diwakili oleh anggota tersebut. Setiap anggota DPR biasanya bertanggung jawab dalam satu atau beberapa bidang tertentu, seperti "Ekonomi", "Hukum", "Pendidikan", dan lain-lain.
+namaPartai: Atribut ini menyimpan nama partai politik yang diwakili oleh anggota tersebut. Di banyak sistem parlementer, anggota DPR berasal dari berbagai partai politik, dan atribut ini merefleksikan afiliasi politik dari masing-masing anggota.

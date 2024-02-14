@@ -24,4 +24,20 @@ namaPartai: Atribut ini menyimpan nama partai politik yang diwakili oleh anggota
 
 ![alt text](image.png)
 
-Pertama, user disajikan dengan data yang tersedia/sudah diinput, jika data masih kosong maka akan seperti gambar diatas terdapat pesan bahwa data masih belum tersedia dan mesti input terlebih dahulu via opsi yang sudah disediakan dibawahnya
+Pertama, user disajikan dengan data yang tersedia/sudah diinput, jika data masih kosong maka akan seperti gambar diatas terdapat pesan bahwa data masih belum tersedia dan mesti input terlebih dahulu via opsi yang sudah disediakan dibawahnya.
+
+![alt text](image-1.png)
+
+Selanjutnya kita akan mencoba menambahkan data dengan memilih opsi nomor 1 kemudian input data sesuai dengan arahan. kemudian pada table yang kosong sebelumnya terdapat 1 data yang berhasil kita tambahkan
+
+![alt text](image-2.png)
+
+Selanjutnya kita akan mencoba update data yang sebelumnya ditambahkan dengan data yang berbeda terlihat di tabel data sudah berubah sesuai dengan inputan yang baru.
+
+![alt text](image-3.png)
+
+Dan terakhir terdapat aksi untuk melakukan penghapusan data, user diminta memasukan id yang akan dihapus kemudian bisa dilihat data nya hilang dari tabel
+
+Opsi terakhir digunakan untuk keluar dari program apabila sudah selesai
+
+Terima kasih

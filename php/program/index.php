@@ -56,17 +56,17 @@ function displayAnggota($daftarAnggota) {
     echo "</table>";
 }
 
-$daftarAnggota = tambahAnggota($daftarAnggota, 1, "Anggota 1", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 50, "Jabatan A", "Bidang A", "Partai A");
-$daftarAnggota = tambahAnggota($daftarAnggota, 2, "Anggota 2", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 45, "Jabatan B", "Bidang B", "Partai B");
-$daftarAnggota = tambahAnggota($daftarAnggota, 3, "Anggota 3", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 40, "Jabatan C", "Bidang C", "Partai C");
-$daftarAnggota = tambahAnggota($daftarAnggota, 4, "Anggota 4", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 35, "Jabatan D", "Bidang D", "Partai D");
+$daftarAnggota = tambahAnggota($daftarAnggota, 1, "Sabil", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 20, "Ketua", "Teknologi", "Gerindra");
+$daftarAnggota = tambahAnggota($daftarAnggota, 2, "Hanif", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 20, "Anggota", "Pertanian", "PDIP");
+$daftarAnggota = tambahAnggota($daftarAnggota, 3, "Thia", "https://www.heuschenschrouff.com/wp-content/uploads/2017/11/team-dummy-woman-e1631101482457.png", 19, "Ketua", "Perhubungan", "Golkar");
+$daftarAnggota = tambahAnggota($daftarAnggota, 4, "Boni", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 35, "Anggota", "Transportasi", "Hanura");
 
 displayAnggota($daftarAnggota);
 
-$daftarAnggota = updateAnggota($daftarAnggota, 2, "Anggota 2 Update", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 46, "Jabatan Update B", "Bidang Update B", "Partai Update B");
+$daftarAnggota = updateAnggota($daftarAnggota, 2, "Hanif Update", "https://www.aquasafemine.com/wp-content/uploads/2018/06/dummy-man-570x570.png", 20, "Ketua", "Pertanian update", "PKS");
 
 displayAnggota($daftarAnggota);
 
-$daftarAnggota = hapusAnggota($daftarAnggota, 3);
+$daftarAnggota = hapusAnggota($daftarAnggota, 4);
 
 displayAnggota($daftarAnggota);

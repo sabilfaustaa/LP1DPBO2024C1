@@ -23,4 +23,5 @@ namaPartai: Atribut ini menyimpan nama partai politik yang diwakili oleh anggota
 # Alur Program
 
 ![alt text](image.png)
+
 Pertama, user disajikan dengan data yang tersedia/sudah diinput, jika data masih kosong maka akan seperti gambar diatas terdapat pesan bahwa data masih belum tersedia dan mesti input terlebih dahulu via opsi yang sudah disediakan dibawahnya

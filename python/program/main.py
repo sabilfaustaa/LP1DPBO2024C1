@@ -1,10 +1,23 @@
 from AnggotaDPR import AnggotaDPR
 
-def display_anggota_dpr(daftar_anggota):
-    for anggota in daftar_anggota:
-        anggota.show_identitas()
+def display_anggota(daftar_anggota):
+    kolom_names = ["ID", "Nama", "Umur", "Jabatan", "Bidang", "Partai"]
+    max_lengths = [len(kolom) for kolom in kolom_names]
 
-def tambah_anggota(daftar_anggota):
+    for anggota in daftar_anggota:
+        identitas = anggota.get_identitas()
+        for i, value in enumerate(identitas):
+            max_lengths[i] = max(max_lengths[i], len(value))
+
+    header_row = " ".join(kolom.ljust(max_lengths[i]) for i, kolom in enumerate(kolom_names))
+    print(header_row)
+
+    for anggota in daftar_anggota:
+        identitas = anggota.get_identitas()
+        row = " ".join(value.ljust(max_lengths[i]) for i, value in enumerate(identitas))
+        print(row)
+
+def tambah(daftar_anggota):
     id = int(input("ID: "))
     nama = input("Nama: ")
     umur = int(input("Umur: "))
@@ -16,7 +29,7 @@ def tambah_anggota(daftar_anggota):
     daftar_anggota.append(anggota_baru)
     print("Anggota DPR berhasil ditambahkan.\n")
 
-def update_anggota(daftar_anggota):
+def update(daftar_anggota):
     id = int(input("ID: "))
     for anggota in daftar_anggota:
         if anggota.get_id() == id:
@@ -35,7 +48,7 @@ def update_anggota(daftar_anggota):
             return
     print(f"Anggota DPR dengan ID {id} tidak ditemukan.\n")
 
-def hapus_anggota(daftar_anggota):
+def hapus(daftar_anggota):
     id = int(input("Masukkan ID anggota DPR yang akan dihapus: "))
     for i, anggota in enumerate(daftar_anggota):
         if anggota.get_id() == id:
@@ -48,8 +61,13 @@ def main():
     daftar_anggota = []
     
     while True:
-        print("===================")
-        display_anggota_dpr(daftar_anggota)
+        print("==================================")
+        print("Tabel Anggota DPR :")
+        if len(daftar_anggota) == 0:
+            print("Data anggota DPR belum tersedia, Silakan input terlebih dahulu!")
+        else:
+            display_anggota(daftar_anggota)
+        print("==================================")
 
         print("1. Tambah Anggota DPR")
         print("2. Update Anggota DPR")
@@ -58,11 +76,11 @@ def main():
         pilihan = int(input("Pilih opsi: "))
 
         if pilihan == 1:
-            tambah_anggota(daftar_anggota)
+            tambah(daftar_anggota)
         elif pilihan == 2:
-            update_anggota(daftar_anggota)
+            update(daftar_anggota)
         elif pilihan == 3:
-            hapus_anggota(daftar_anggota)
+            hapus(daftar_anggota)
         elif pilihan == 4:
             print("Selesai.")
             break

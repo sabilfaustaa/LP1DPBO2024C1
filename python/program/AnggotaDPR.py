@@ -43,7 +43,5 @@ class AnggotaDPR:
     def set_namaPartai(self, namaPartai):
         self.__namaPartai = namaPartai
 
-    def show_identitas(self):
-        print(f"ID: {self.__id}, Nama: {self.__nama}, Umur: {self.__umur}, "
-              f"Jabatan: {self.__jabatan}, Bidang: {self.__namaBidang}, "
-              f"Partai: {self.__namaPartai}")
+    def get_identitas(self):
+        return (str(self.__id), self.__nama, str(self.__umur), self.__jabatan, self.__namaBidang, self.__namaPartai)

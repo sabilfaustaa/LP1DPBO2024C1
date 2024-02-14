@@ -2,14 +2,16 @@
 class AnggotaDPR {
     private $id;
     private $nama;
+    private $foto;
     private $umur;
     private $jabatan;
     private $namaBidang;
     private $namaPartai;
 
-    public function __construct($id, $nama, $umur, $jabatan, $namaBidang, $namaPartai) {
+    public function __construct($id, $nama, $foto, $umur, $jabatan, $namaBidang, $namaPartai) {
         $this->id = $id;
         $this->nama = $nama;
+        $this->foto = $foto;
         $this->umur = $umur;
         $this->jabatan = $jabatan;
         $this->namaBidang = $namaBidang;
@@ -22,6 +24,10 @@ class AnggotaDPR {
     
     public function get_nama() {
         return $this->nama;
+    }
+    
+    public function get_foto() {
+        return $this->foto;
     }
     
     public function get_umur() {
@@ -48,6 +54,10 @@ class AnggotaDPR {
         $this->nama = $nama;
     }
 
+    public function set_foto($foto) {
+        $this->foto = $foto;
+    }
+
     public function set_umur($umur) {
         $this->umur = $umur;
     }
@@ -63,10 +73,11 @@ class AnggotaDPR {
     public function set_namaPartai($namaPartai) {
         $this->namaPartai = $namaPartai;
     }
-    
+
     public function showIdentitas() {
         echo "<tr>
                 <td>{$this->id}</td>
+                <td><img src='{$this->foto}' alt='Foto' style='width: 50px; height: auto;'></td>
                 <td>{$this->nama}</td>
                 <td>{$this->umur}</td>
                 <td>{$this->jabatan}</td>
